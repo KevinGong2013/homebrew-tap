@@ -5,21 +5,21 @@
 class Apkgo < Formula
   desc "Upload apk to anywhere"
   homepage "https://apkgo.com.cn"
-  version "1.0.0"
+  version "1.0.1"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.0/apkgo_Darwin_arm64.tar.gz"
-      sha256 "c23bbb1ba7767f2b1d051dee2d086e41d9ece6a3b0f3da77f8e21a4ed3cd03f3"
+    if Hardware::CPU.intel?
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.1/apkgo_Darwin_x86_64.tar.gz"
+      sha256 "659e01571a48b69f3a7ba73729029c0ddb74f679bf965cdcdbb6b5e08d83decb"
 
       def install
         bin.install "apkgo"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.0/apkgo_Darwin_x86_64.tar.gz"
-      sha256 "e613c19cb04ec98e6182a714d1cdf130fecfe4a47b86dd15cee83d24065ced1e"
+    if Hardware::CPU.arm?
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.1/apkgo_Darwin_arm64.tar.gz"
+      sha256 "df7f10a44f6073b7acac1ca2596c7a20ad588ef788102fef4933e95eafe4de98"
 
       def install
         bin.install "apkgo"
@@ -29,24 +29,24 @@ class Apkgo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.0/apkgo_Linux_armv6.tar.gz"
-      sha256 "98fb8919882300c1933a06368a430bde4e424873b995a30351c799f82864306c"
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.1/apkgo_Linux_armv6.tar.gz"
+      sha256 "3d3676a214dfcf01b651387919c41bccbf6a702a9aa7547fc090a05f111f803d"
 
       def install
         bin.install "apkgo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.0/apkgo_Linux_x86_64.tar.gz"
-      sha256 "34bfb0af334e212052308315f31ebbec8ba8db9e43313eb93be5803fc6d5cd63"
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.1/apkgo_Linux_x86_64.tar.gz"
+      sha256 "aa64936e2332814faea18094f1ec5ddf25348a37cade8d474d434c1850cf5572"
 
       def install
         bin.install "apkgo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.0/apkgo_Linux_arm64.tar.gz"
-      sha256 "7177e201b965a97f75282d19419e4e4481733500650dca4f31f49c176ed64356"
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.1/apkgo_Linux_arm64.tar.gz"
+      sha256 "5d84ceab809876d4ef0d11c6fde58e4566208316409153f78978538e311743cb"
 
       def install
         bin.install "apkgo"
