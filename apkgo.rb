@@ -8,13 +8,18 @@ class Apkgo < Formula
   version "0.9.0"
   license "Apache License"
 
-  depends_on "go" => :optional
-  depends_on "git"
-
   on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/KevinGong2013/apkgo/releases/download/0.9.0/apkgo_Darwin_x86_64.tar.gz"
+      sha256 "72c3bfa058d931d1cde3ce9a5974ccb2d821487d242d47577d573c8b0ba4939c"
+
+      def install
+        bin.install "apkgo"
+      end
+    end
     if Hardware::CPU.arm?
       url "https://github.com/KevinGong2013/apkgo/releases/download/0.9.0/apkgo_Darwin_arm64.tar.gz"
-      sha256 "de8d81118fc1f3f65c1029ca0ac4ae6afe8a9348aaef44af58be4cab699586b2"
+      sha256 "ee7dfd9a5b7ecce43b6db3e575faed4a4be1bfa7c6406a201ad3c7e8a7ddc8ff"
 
       def install
         bin.install "apkgo"
@@ -25,7 +30,15 @@ class Apkgo < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/KevinGong2013/apkgo/releases/download/0.9.0/apkgo_Linux_arm64.tar.gz"
-      sha256 "99ab586b14d57e6b8a778317d113d8b04e703eae39efd777ce70470cbf34b88b"
+      sha256 "9a7d5c84cd9946525c03ade69dfc0c617d80f4a3da97b958860f5428050837eb"
+
+      def install
+        bin.install "apkgo"
+      end
+    end
+    if Hardware::CPU.intel?
+      url "https://github.com/KevinGong2013/apkgo/releases/download/0.9.0/apkgo_Linux_x86_64.tar.gz"
+      sha256 "6178231e243c93373f44878c50681504e37ba8cf416f9da136b85d240dc997e5"
 
       def install
         bin.install "apkgo"
