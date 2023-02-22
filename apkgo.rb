@@ -5,21 +5,21 @@
 class Apkgo < Formula
   desc "Upload apk to anywhere"
   homepage "https://apkgo.com.cn"
-  version "1.0.4"
+  version "1.0.5"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/v1.0.4/apkgo_Darwin_x86_64.tar.gz"
-      sha256 "e8f0641b3506164aca74165465266c6cf854f4649a7784c019c7a06f51a77588"
+    if Hardware::CPU.arm?
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.5/apkgo_Darwin_arm64.tar.gz"
+      sha256 "2d4d13e0583685acc39db7ce3a40e9e0f15717d1e42fe5cb11fdfcfbb575fa48"
 
       def install
         bin.install "apkgo"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/v1.0.4/apkgo_Darwin_arm64.tar.gz"
-      sha256 "7262a593d3de64595437e5fb36f1e759c9fe68ba0b73d640c65e5c73e4b6f642"
+    if Hardware::CPU.intel?
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.5/apkgo_Darwin_x86_64.tar.gz"
+      sha256 "607151db6b77603b4d9322dc49c1e0805ccbc9de4a37a9f0e95656b294432000"
 
       def install
         bin.install "apkgo"
@@ -29,16 +29,16 @@ class Apkgo < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/v1.0.4/apkgo_Linux_arm64.tar.gz"
-      sha256 "06c33f2098ac8ad72811c0f9fe0f460f070df9cfd44d5075b5a81c6cc16b580a"
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.5/apkgo_Linux_arm64.tar.gz"
+      sha256 "b0181c01d49795645e88b5d8a9d139a6ce7fedb1337cace112fea3c16e6af38d"
 
       def install
         bin.install "apkgo"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/KevinGong2013/apkgo/releases/download/v1.0.4/apkgo_Linux_x86_64.tar.gz"
-      sha256 "881591e06e8a3703f18790c379b74d86683e97832a82298876d075f3c1c6674b"
+      url "https://github.com/KevinGong2013/apkgo/releases/download/1.0.5/apkgo_Linux_x86_64.tar.gz"
+      sha256 "22fdc0d92e2f2dfd7d289926f4e461e3cd8b60ebf422305a54fe29e0f3cbb6d4"
 
       def install
         bin.install "apkgo"
