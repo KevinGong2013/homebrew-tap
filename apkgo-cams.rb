@@ -5,21 +5,21 @@
 class ApkgoCams < Formula
   desc "上传apk到七牛、并发布cams"
   homepage "https://apkgo.com.cn"
-  version "1.0.2"
+  version "1.0.3"
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.2/apkgo-cams_Darwin_x86_64.tar.gz"
-      sha256 "d768a6821e739c0a7f36c8c106898791d767069d730dd59ba9b49c91625d4113"
+    if Hardware::CPU.arm?
+      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.3/apkgo-cams_Darwin_arm64.tar.gz"
+      sha256 "b5facb02f461a66aa3e179ffd761f5a9d0d602006a8262af65c2960740115144"
 
       def install
         bin.install "apkgo-cams"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.2/apkgo-cams_Darwin_arm64.tar.gz"
-      sha256 "0a9ea7f40cf8a775e8cb0d69cbd1f42b7ac4f1302b9176dd4d89d8aebb5c3bd1"
+    if Hardware::CPU.intel?
+      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.3/apkgo-cams_Darwin_x86_64.tar.gz"
+      sha256 "d74c65edd41e346a55a1b7dad14ba8980d1ee4839d902c17db7e75ed2235116a"
 
       def install
         bin.install "apkgo-cams"
@@ -29,16 +29,16 @@ class ApkgoCams < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.2/apkgo-cams_Linux_arm64.tar.gz"
-      sha256 "c6c11ac8855fdcd3e89730cec77810a2591bcdcb62020da519c6e93b8330e9ca"
+      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.3/apkgo-cams_Linux_arm64.tar.gz"
+      sha256 "e0a5456c133a7b1284feca9138295a9e3f137edf93b006dc840d85b9c9be8dab"
 
       def install
         bin.install "apkgo-cams"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.2/apkgo-cams_Linux_x86_64.tar.gz"
-      sha256 "d36827a9825ab6ebcfda25600e1c8f919bf18443d92e21707099546dd9bd5427"
+      url "https://github.com/YuxiaorMobileTeam/apkgo-cams/releases/download/1.0.3/apkgo-cams_Linux_x86_64.tar.gz"
+      sha256 "75e66fc007dea092f029810612d488f7f2bb8b78d5b3e8f0ab90e3aecf96f34c"
 
       def install
         bin.install "apkgo-cams"
